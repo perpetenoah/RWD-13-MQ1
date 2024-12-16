@@ -53,9 +53,23 @@ nav li {
 nav a {
 	padding: 8px 12px;
 	background: rgba(0, 0, 0, .2);
-	border-radius: 6px
+	border-radius: 6px;
+    width: auto;
 }
 
 @media (width < 800px) {
-	
+  body{
+    display: grid;
+  }
+  #navigation {
+    order: 5;
+  }
+  #navigation ul{
+    display: flex;
+    flex-direction: column;
+  }
+  nav a{
+    display: block;
+    margin-bottom: 5px;
+  }
 }
