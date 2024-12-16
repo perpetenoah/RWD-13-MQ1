@@ -1,122 +1,61 @@
+/* Lorsque la taille de fenêtre est inférieure ou égale à 640px, le bloc entier de navigation doit se positionner sous le footer */
+
 html {
-  padding: 10px 50px;
+	font-size: 62.5%;
 }
+
 body {
-  background: #f1efe2;
-  font-size: 1.4em;
-  line-height: 1.4;
-  font-family: helvetica, arial, sans-serif;
-}
-h1 {
-  margin-top: 0px;
-  margin-bottom: 20px;
-  color: #567;
-}
-p.toto {
-  padding: 10px 20px;
-  background: hotpink;
-  color: #fff;
-  /*width: 80%;
-  margin:1em  auto;
-  max-width: 60em;*/
+	margin: 8px;
+	background-color: #fff;
+	color: #000;
+	font-family: "Century Gothic", helvetica, arial, sans-serif;
+	font-size: 1.4em;
+	line-height: 1.5;
 }
 
-/* Media Query "taille de fenêtre inférieure ou égale à 640px" */
-/* max-width: 640px width <= 640px*/
-@media (max-width: 640px) {
-  p.toto {
-    background: maroon;
-    color: #dd0;
-  }
+header,
+footer,
+[id=main],
+nav {
+	color: #fff;
+	padding: 10px;
+	margin: 0 0 1em;
+	background: hotpink;
+	border-radius: 6px
 }
 
-/* Variantes et montrer bugs :
-1. Tester avec un sélecteur de priorité plus élevée dans le CSS de base 
-2. Montrer comment annuler une valeur de width avec valeur par défaut
-3. Illustrer gracefull degradation et progressive enhancement (mobile first)
-4. Montrer media query écran intermédiaire 
-*/
+header {
+	background: orange
+}
 
-/* GRACEFUL DEGRADATION */
-/* Le CSS de base s'applique */
-/* (ici, les p.toto ont une couleur blanche (L18) */
-/* Ecrans entre 600 et 800 px, on dégrade :
-  la valeur blue de color (L49) écrase la valeur white (L18)
-  => tester par ex. avec 700px  */
-/* => la couleur blanche ne s'appique plus
-qu'aux petits écrans (width < 600px)
-et aux tout grands écrans (width > 800px)
-=> tester par ex. avec 400px et 900px */
+[id=main] {
+	background: maroon
+}
 
+footer {
+	background: gray;
+	padding: 10px;
+}
 
+a {
+	color: #fff;
+}
 
+nav ul {
+	margin: 0;
+	padding: 0;
+}
 
+nav li {
+	display: inline-block;
+}
 
+nav a {
+	padding: 8px 12px;
+	background: rgba(0, 0, 0, .2);
+	border-radius: 6px
+}
 
-
-
-
-
-/* @media (min-width:600px) and (max-width:800px) OU @media (600px <= width <= 800px) */
-/*@media (600px <= width <= 800px) {
-  p.toto {
-    color: blue;
-  }
-}*/
-
-
-
-
-/* Ecrans plus petits que 600 px : on dégrade encore :
- la valeur black de color (L61) écrase la valeur white (L18),
- la valeur blue n'entre plus en compte (condition false)
-  => tester par ex. avec 400px  */
-/* => la couleur blanche ne s'appique plus
-qu'aux tout grands écrans (width > 800px)
-=> tester par ex. avec 400px et 900px */
-/* => On a au final une CSS de base pour les grands écrans
-et on dégrade au fur et à mesure pour les petits écrans */
-
-
-
-
-
-/*@media (max-width: 600px) */
-/*@media (width < 600px) {
-  p.toto {
-    color: black;
-  }
-}*/
-
-
-
-
-/* PROGRESSIVE ENHANCEMENT = MOBILE FIRST */
-/* Le CSS de base s'applique */
-/* (ici, les p.toto ont une couleur blanche (L18) */
-/* Ecrans entre 600 et 800 px, on enrichit :
-  la valeur blue de color (L49) écrase la valeur white (L18)
-  => tester par ex. avec 700px  */
-/* => la couleur blanche ne s'appique plus
-qu'aux petits écrans (width < 600px)
-et aux tout grands écrans (width > 800px)
-=> tester par ex. avec 400px et 900px */
-/*@media (600px <= width <= 800px) {
-  p.toto {
-    color: blue;
-  }
-}*/
-/* Ecrans plus grand que 800 px : on enrichit encore :
- la valeur black de color (L61) écrase la valeur white (L18),
- la valeur blue n'entre plus en compte (condition false)
-  => tester par ex. avec 900px  */
-/* => la couleur blanche ne s'appique plus
-qu'aux petits écrans (width < 600px)
-=> tester par ex. avec 400px et 900px */
-/* => On a au final une CSS de base pour les mobiles
-et on enrichit au fur et à mesure pour les grands écrans */
-/*@media (width > 800px) {
-  p.toto {
-    color: black;
-  }
-}*/
+@media (width < 800px) {
+	
+}
